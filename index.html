@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href ="style.css">
+
+<style>
+    body {
+        background-color: #c19eab;
+    }
+    .center {
+        position: relative;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+
+    }
+    .layerover {
+        position: absolute;
+        top: 20px;
+        left: 798px;
+        width: 15%;
+        height: 28%;
+    }
+    img {
+        width:60%;
+        height:60%;
+    }
+    .woman {
+        top: 20px;
+        left: 800px;
+        width: 14%;
+        height: 28%;
+    }
+    .oldone {
+        top: 46px;
+        left: 807px;
+        width: 14%;
+        height: 28%;
+    }
+    .sus {
+        top: 38px;
+        left: 807px;
+        width: 14%;
+        height: 28%;
+    }
+    .button-73 {
+        appearance: none;
+        background-color: #e8bdc1;
+        border-radius: 40em;
+        border-style: none;
+        box-shadow: #ad8fa0 0 -12px 6px inset;
+        box-sizing: border-box;
+        color: #000000;
+        cursor: pointer;
+        display: block;
+        font-family: -apple-system,sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: -.24px;
+        margin: auto;
+        outline: none;
+        padding: 1rem 1.3rem;
+        quotes: auto;
+        text-align: center;
+        text-decoration: none;
+        transition: all .15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        color: #4b426a;
+        }
+
+        .button-73:hover {
+        background-color: #F5d5d6;
+        box-shadow: #e8bdc1 0 -6px 8px inset;
+        transform: scale(1.05);
+        }
+
+        .button-73:active {
+        transform: scale(1.025);
+        }
+
+        @media (min-width: 768px) {
+        .button-73 {
+            font-size: 1.5rem;
+            padding: .75rem 2rem;
+        }
+        }
+        .fade-in-image { 
+            animation: fadeIn 5s; 
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .form-example {
+            text-align: center;
+        }
+        .form-inner {
+            margin: auto;
+            width: 70%;
+        }
+        .bubbly {
+            position: absolute;
+            width:60%;
+            height:60%;
+            animation: fadeIn 2s;
+            top: 80px;
+            left: 600px;
+        }
+        .textinside {
+            position: absolute; 
+            width: 600px;
+            height:800px;
+            top: 200px;
+            left:55px;
+            font-family: -apple-system,sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #4b426a;
+        }
+  
+
+</style>
+</head>
+<title>My Event Page</title>
+<body>
+    <img src="background.png"  class = "center">
+    <div class = "fade-in-image">
+        <img id = "LadyIMG" src="lady.png"  class = "layerover woman"  >
+        <img src="elder.png" class = "layerover oldone" id = "ElderIMG">
+        <img src="shady.png" class = "layerover sus" id = "SusIMG">
+    </div>
+    <div id = "speechbubble"  class = "bubbly" hidden>
+        <img src="chatbox.png"/>
+        <p id ="speech" class = "textinside"></p>
+        <!--<p id ="sus1"  class = "textinside">Which emotion would you say is your most detrimental one?</p>
+        <p id ="lady1" class = "textinside">Welcome to the Remedy store! Which of these emotions would you say best describes you?</p>-->
+        </div>
+    <br /><br />
+    <div class = "center">
+        <button id = "text1" class = "button-73" role="button" type = "button" onclick="toggle1();">...</button>
+      
+        <button id = "text2" class = "button-73" role="button" type = "button" onclick="toggle2();">Where's the shopkeeper?</button>
+     
+        <button id = "text3" class = "button-73" role="button" type = "button" onclick="toggle3();">What is this place?</button>
+      
+        <button id = "meow1" class = "button-73" role="button" type = "button"  >Tired</button>
+    
+        <button id = "meow2" class = "button-73" role="button" type = "button"  >Bored</button>
+
+        <button id = "meow3" class = "button-73" role="button" type = "button"  >Moody</button>
+
+    </div>
+    
+
+    
+    <script src="main.js"></script>
+    <script>
+        
+        let element1 = document.getElementById("ElderIMG");
+        let element2 = document.getElementById("SusIMG");
+        let element3 = document.getElementById("LadyIMG");
+        
+        let choice1 = document.getElementById("meow1");
+        let choice2 = document.getElementById("meow2");
+        let choice3 = document.getElementById("meow3");
+
+        let thebox = document.getElementById("speechbubble");
+        let textbox = document.getElementById("speech");
+
+        choice1.style.display = "none";
+        choice2.style.display = "none";
+        choice3.style.display = "none";
+
+        element1.setAttribute("hidden", "hidden");
+        element2.setAttribute("hidden", "hidden");
+        element3.setAttribute("hidden", "hidden");
+
+        let txt1 = document.getElementById("text1");
+        let txt2 = document.getElementById("text2");
+        let txt3 = document.getElementById("text3");
+
+
+        let theform = document.getElementById("formenter");
+
+        function thefunct() {
+            let choice1 = document.getElementById("meow1");
+            let choice2 = document.getElementById("meow2");
+            let choice3 = document.getElementById("meow3");
+            txt1.remove();
+            txt2.remove();
+            txt3.remove();
+            choice1.style.display = "block";
+            choice2.style.display = "block";
+            choice3.style.display = "block";
+            console.log(choice1);
+            thebox.hidden = false;
+        }
+        
+
+        let toggle1 = button => {
+            let hidden1 = element1.getAttribute("hidden");
+            if (hidden1) {
+                element1.removeAttribute("hidden");
+            }
+            thefunct();
+            textbox.innerText = "How are you doing?";
+        }
+        txt1.onclick=toggle1;
+        let toggle2 = button => {
+            let hidden2 = element2.getAttribute("hidden");
+            if (hidden2) {
+                element2.removeAttribute("hidden");
+            }
+            thefunct();
+            textbox.innerText = "Which emotion would you say is your most detrimental one?";
+        }
+        txt2.onclick=toggle2;
+        let toggle3 = button => {
+            let hidden3 = element3.getAttribute("hidden");
+            if (hidden3) {
+                element3.removeAttribute("hidden");
+            }
+            thefunct();
+            textbox.innerText = "Welcome to the Remedy store! Which of these emotions would you say best describes you?";
+        }
+        txt3.onclick = toggle3;
+
+        let nextTog1 = button => {
+            getTired();
+        }
+        choice1.onclick = nextTog1; 
+        let nextTog2 = button => {
+            getBored();
+        }
+        choice2.onclick = nextTog2;
+        let nextTog3 = button => {
+            getMoody();
+        }
+        choice3.onclick = nextTog3;
+        
+    </script>
+</body>
+</html>
